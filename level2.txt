@@ -1,0 +1,8 @@
+bandit2@bandit:~$ cat ./--spaces\ in\ this\ filename--
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+先ほどと同様に`./`で見ようとしたらtabで補完出てきた
+
+https://stackoverflow.com/questions/23019471/how-can-i-go-to-a-directory-whose-file-name-has-spaces-between-them-in-the-linux
+
+文字列として扱うように``で囲うか`./`をつければ見れる
