@@ -1,0 +1,16 @@
+https://itsfoss.com/ssh-to-port/
+
+基本的には上記に書いてあるとおり
+
+```
+ssh -p port_number user@IP
+```
+
+今回は
+```
+ssh -p 2220 bandit0@bandit.labs.overthewire.org
+```
+
+普通にcatとかで中身見る
+
+The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
