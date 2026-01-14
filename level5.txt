@@ -1,0 +1,5 @@
+bandit5@bandit:~/inhere$ cat $(find . -readable -size 1033c \! -executable)
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+条件が3つ与えられてるので、それに合うものを`man find`で探す
+条件の否定が書きたければ`\! ...`で書ける
