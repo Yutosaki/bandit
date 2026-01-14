@@ -1,0 +1,24 @@
+bandit4@bandit:~$ ls -al
+total 24
+drwxr-xr-x   3 root root 4096 Oct 14 09:26 .
+drwxr-xr-x 150 root root 4096 Oct 14 09:29 ..
+-rw-r--r--   1 root root  220 Mar 31  2024 .bash_logout
+-rw-r--r--   1 root root 3851 Oct 14 09:19 .bashrc
+drwxr-xr-x   2 root root 4096 Oct 14 09:26 inhere
+-rw-r--r--   1 root root  807 Mar 31  2024 .profile
+bandit4@bandit:~$ cd inhere/
+bandit4@bandit:~/inhere$ file ./*
+./-file00: data
+./-file01: OpenPGP Public Key
+./-file02: OpenPGP Public Key
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: data
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+bandit4@bandit:~/inhere$ cat ./-file07
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+
