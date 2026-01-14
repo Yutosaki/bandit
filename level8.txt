@@ -1,0 +1,5 @@
+bandit8@bandit:~$ sort data.txt | uniq -u
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+なぜか`uniq -u`だけでは出来なかった。googleで調べたらuniqは隣接している行があるものを削除する、ということだったので、このやり方で行けた。
+とにかく同じ文字列のものを隣に並べられたら勝ち
