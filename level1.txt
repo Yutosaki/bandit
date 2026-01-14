@@ -1,0 +1,6 @@
+https://unix.stackexchange.com/questions/16357/usage-of-dash-in-place-of-a-filename
+
+-はbashではstdin/stdoutとして扱われるらしく、`cat -`としても上手く表示されない(標準入力の待ちになる)。ので、絶対パスにするか`./-`などを使用して見るといける
+
+password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
