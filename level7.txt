@@ -1,0 +1,5 @@
+bandit7@bandit:~$ cat data.txt | grep millionth
+millionth	dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+同じ行にあるのでgrepするだけで終わる
+最初1million番目の文字列の横にあるのかと勘違いした
