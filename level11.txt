@@ -1,0 +1,4 @@
+bandit11@bandit:~$ cat data.txt | tr a-z n-za-m | tr A-Z N-ZA-M
+The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+trはstdinからの引数をstdoutに出力するので、echoやcatなどでpipeするのが良さそう
