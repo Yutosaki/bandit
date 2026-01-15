@@ -1,0 +1,7 @@
+bandit9@bandit:~$ file data.txt
+data.txt: data
+bandit9@bandit:~$ man strings
+bandit9@bandit:~$ strings data.txt
+========== FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+stringsコマンドがprintableキャラクターを出力するコマンドだったのでそれで終わり
