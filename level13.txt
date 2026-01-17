@@ -1,0 +1,10 @@
+bandit13@bandit:~$ ls
+sshkey.private
+bandit13@bandit:~$ cat sshkey.private
+-----BEGIN RSA PRIVATE KEY-----
+this is not real key
+-----END RSA PRIVATE KEY-----
+
+このようにsshのprivatekeyのみがある。今回はkeyを探し出すのではなく、private keyを使用して次のレベルにsshしろというものだったので、`man ssh`でprivateでgrepした
+`-i`optionでprivate keyをdefaultの`~/.ssh`ではなくて、自分で指定できる様だったので、このprivatekeyを/tmp/privatekeyとして作成してsshした。すると権限が与えられすぎてるので使えないと断られた
+`ls -l ~/.ssh/id_ed25519`などを見ると、権限が`read`と`write`しかなく(userにのみ)、`man chmod`で権限を確認したら`r + w`は6だったので`chmod 600`として権限を直したらいけた
