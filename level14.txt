@@ -1,0 +1,12 @@
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+まずはこれで鍵を取得する。これをport30000におくる
+
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14 | nc localhost 30000
+Correct!
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+ncコマンドで送信できるらしいので、それを使用してcatしたキーを送信する
