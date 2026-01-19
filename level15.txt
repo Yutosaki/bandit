@@ -1,0 +1,19 @@
+bandit15@bandit:~$ openssl s_client -connect localhost:30001
+...
+---
+read R BLOCK
+k
+KEYUPDATE
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+Correct!
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+closed
+
+https://docs.openssl.org/3.0/man1/openssl-s_client/#connected-commands
+https://www.feistyduck.com/library/openssl-cookbook/online/testing-with-openssl/connecting-to-tls-services.html
+ただ送るだけならncコマンドでいいが、SSL/TLSを使用するならopensslコマンドで送信する。manを読めばいいが、s_clientによってリモートサーバーをsslのクライアントの様に振る舞ってくれる様にしてくれるらしい
+
+s_client
+           This implements a generic SSL/TLS client which can establish a transparent connection to a remote server speaking SSL/TLS. It's intended for testing purposes only and provides only
+           rudimentary interface functionality but internally uses mostly all functionality of the OpenSSL ssl library.
