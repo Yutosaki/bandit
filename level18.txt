@@ -25,3 +25,11 @@ zsh@MacBook-Pro ~/bandit master $ cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
 
 いけた
 最初`-f ls`をして`readme`とだけ出てきたので、それの中身を見た
+
+追記
+```
+ssh [user@]hostname [command]
+・・・
+If command is specified, it is executed on the remote host instead of a login shell.
+```
+そもそも`-f`optionを指定しなくても`ssh`コマンドの末尾に`cat readme`とやるだけでそのコマンドを実行してくれるらしい
