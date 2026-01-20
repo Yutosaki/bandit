@@ -1,0 +1,15 @@
+bandit19@bandit:~$ whoami
+bandit19
+bandit19@bandit:~$ ./bandit20-do
+Run a command as another user.
+  Example: ./bandit20-do whoami
+bandit19@bandit:~$ ./bandit20-do whoami
+bandit20
+bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
+https://en.wikipedia.org/wiki/Setuid
+
+`ls -l`などで実行ファイルを見ればわかるのだが、userの実行権限のところがsとなっている。通常のxとは違い、ファイルの所有者が自動的に実行する様になっている(実行ファイルの場合)
+なので、通常のところで`whoami`コマンドをするとbandit19というuserなのだが、実行ファイルをつけて行うとbandit20というユーザーになっている
+よってこれを使用して、通常の権限では見られないpasswordを確認する
