@@ -1,0 +1,40 @@
+# 行ったこと
+1つ目のターミナルで
+bandit20@bandit:~$ nc -lvp 9999
+Listening on 0.0.0.0 9999
+Connection received on localhost 59756
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+[1]+  Done                    echo "0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO" | nc -l localhost 8888
+
+2つ目のターミナルで
+bandit20@bandit:~$ ./suconnect 9999
+Read: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+Password matches, sending next password
+
+`man nc`で`listen`などで調べたら、`nc -l`でlisten状態に出来るとあった
+そこに対して別ターミナルからアクセスをする。そして1つ目のターミナルでleevel20のキーを入れると新しいキーが出力される
+
+
+# 別の方法では、バックグラウンドで`nc -l`を実行して、そこにアクセスするという方法もある
+
+bandit20@bandit:~$ echo "0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO" | nc -l localhost 8888 &
+[1] 46
+bandit20@bandit:~$ ps aux 46
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0  14692  2932 ?        S    17:24   0:00 sshd: bandit20 [priv]
+bandit20       2  0.1  0.1  14948  7084 ?        S    17:24   0:00 sshd: bandit20@pts/0
+bandit20       3  0.0  0.1   8772  5424 pts/0    Ss   17:24   0:00 -bash
+bandit20      46  0.0  0.0   3436  1976 pts/0    S    17:28   0:00 nc -l localhost 8888
+bandit20      47  0.0  0.1  10884  4592 pts/0    R+   17:28   0:00 ps aux 46
+bandit20@bandit:~$ ./suconnect 8888
+Read: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+Password matches, sending next password
+EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+[1]+  Done                    echo "0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO" | nc -l localhost 8888
+
+
+ncコマンドについて
+`nc -l 1234`でポートのリッスンをして、そこへ`nc localhost 1234`などとすると接続が開始される
+その後、文字を送信するとlistenしている方へ送られる
+`nc -l 1234 &`などとすると、バックグラウンドで実行できる。プロセスを確認したいときは`ps aux | grep 25268' (`nc -l 1234 &`と実行した時に出力されるpid)で確認できる
