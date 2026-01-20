@@ -1,0 +1,27 @@
+zsh@MacBook-Pro ~/bandit master $ ssh -p 2220 bandit18@bandit.labs.overthewire.org
+...
+Byebye !
+Connection to bandit.labs.overthewire.org closed.
+
+この様になるので、何か工夫しないといけない
+`man ssh -> /exec`と検索すると`-f`optionというのが見つかったので、それを試してみる
+
+zsh@MacBook-Pro ~/bandit master $ ssh -p 2220 bandit18@bandit.labs.overthewire.org -f 'cat readme'
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+backend: gibson-0
+bandit18@bandit.labs.overthewire.org's password:
+Permission denied, please try again.
+bandit18@bandit.labs.overthewire.org's password:
+zsh@MacBook-Pro ~/bandit master $ cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+
+いけた
+最初`-f ls`をして`readme`とだけ出てきたので、それの中身を見た
