@@ -1,0 +1,14 @@
+bandit17@bandit:~$ ls
+passwords.new  passwords.old
+bandit17@bandit:~$ file *
+passwords.new: ASCII text
+passwords.old: ASCII text
+bandit17@bandit:~$ less passwords.new
+bandit17@bandit:~$ diff passwords.new passwords.old
+42c42
+< x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+---
+> BMIOFKM7CRSLI97voLp3TD80NAq5exxk
+
+`man diff -> /<`などをすればどっちのファイルの出力がどちらの行かわかるのでそれでおしまい
+
