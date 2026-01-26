@@ -17,3 +17,10 @@ bandit22@bandit:~$ echo I am user bandit22 | md5sum
 8169b67bd894ddbb4412f91573b38db3  -
 bandit22@bandit:~$ cat /tmp/8169b67bd894ddbb4412f91573b38db3
 tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
+
+bandit22でやるとuserが違うのでsshできないっぽい
+bandit22@bandit:~$ echo I am user bandit23 | md5sum
+8ca319486bfbbc3663ea0fbe81326349  -
+bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
+
